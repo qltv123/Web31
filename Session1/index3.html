@@ -4,7 +4,7 @@
     <title>Document</title>
 </head>
 <body>
-    <script> //Tính Tổng n số
+    <!-- <script> //Tính Tổng n số
         n = prompt("Nhập n: ");
         var sum = 0;
         for(let i = 1; i <= n; i++){
@@ -12,7 +12,7 @@
         }
         document.write("<BR>")
         document.write("Tổng của " + n + " số là: " + sum);
-    </script>
+    </script> -->
 
 <!-- <script> //Tính tích n số
         n = prompt("Nhập n: ");
@@ -32,5 +32,25 @@
                 document.write(str[i]);
             }
         </script> -->
+
+    <script>
+        var so1 = prompt("Nhập số thứ nhất:");
+        var so2 = prompt("Nhập số thứ hai:");
+
+        document.write("Ước chung lớn nhất của 2 số " + so1 + " và " + so2 + " là: " + UCLN(so1,so2));
+        document.write("<BR>")
+        document.write("Bội chung nhỏ nhất của 2 số " + so1 + " và " + so2 + " là: " + BCLN(so1,so2));
+
+
+        function UCLN(so1, so2){
+            if (so2 == 0) return so1;
+            return UCLN(so2, so1 % so2);
+        }
+
+        function BCLN(so1, so2){
+            return (so1 * so2) / UCLN(so1, so2)
+        }
+
+    </script>
 </body>
 </html>
